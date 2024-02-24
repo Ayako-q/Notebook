@@ -20,21 +20,21 @@ public class Okna
         mainFrame.setResizable(false);
 
         // Layout
-        GridLayout brd = new GridLayout(4, 4);
+        GridBagLayout layout = new GridBagLayout();
 
         // Buttons
-        JButton newNote = new JButton("newNote");
-        JButton editNote = new JButton("editNote");
-        JButton deleteNote = new JButton("deleteNote");
+        JButton newNote = new JButton("NewN ote");
+        JButton editNote = new JButton("Edit Note");
+        JButton deleteNote = new JButton("Delete Note");
 
-        // Buttons actions
+        // Buttons functionality
 
 
         Color bezeviy = new Color(255, 255, 156);
 
         mainFrame.setBackground(bezeviy);
 
-        mainFrame.setLayout(brd);
+        mainFrame.setLayout(layout);
         mainFrame.add(newNote);
         mainFrame.add(editNote);
         mainFrame.add(deleteNote);

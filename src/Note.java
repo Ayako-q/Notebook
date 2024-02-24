@@ -1,10 +1,12 @@
+import java.time.LocalDateTime;
+
 public class Note
 {
-    public Integer date, dateChanged;
+    public LocalDateTime dateChanged, date;
     public String content, title;
 
     // Constructor
-    public Note(Integer date, String content, String title, Integer dateChanged)
+    public Note(LocalDateTime date, String content, String title, LocalDateTime dateChanged)
     {
         this.title = title;
         this.content = content;
@@ -15,12 +17,12 @@ public class Note
     // Setters:
     public void setTitle(String title) {this.title = title;}
     public void setContent(String content) {this.content = content;}
-    public void setDate(Integer date) {this.date = date;}
-    public void setDateChanged(Integer dateChanged){this.dateChanged = dateChanged;}
+    public void setDate(String time) {this.date = date;}
+    public void setDateChanged(LocalDateTime dateChanged){this.dateChanged = dateChanged;}
 
     // Getters:
-    public Integer getDate() {return date;}
-    public Integer getDateChanged() {return dateChanged;}
+    public LocalDateTime getDate() {return date;}
+    public LocalDateTime getDateChanged() {return dateChanged;}
     public String getContent() {return content;}
     public String getTitle() {return title;}
 }

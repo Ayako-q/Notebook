@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.time.LocalDateTime;
 
 public class Notes
 {
-    private int i = 0; // number of users
+    private int usersCount = 0; // number of users
     private ArrayList<Note> noteList;
 
     public Notes() {noteList = new ArrayList<Note>();}
@@ -13,9 +14,19 @@ public class Notes
     }
 
     // Function to create a new note
-    public void createNewNote()
+    public void createNewNote(String title, String body)
     {
+        LocalDateTime time = LocalDateTime.now();
+        System.out.println(time);
+        Note newNote = new Note(time, title, body, time);
+        usersCount++;
+        noteList.add(newNote);
+    }
 
-        //Note newNote = new Note();
+    public void editNote(Note note, String newTitle, String newBody)
+    {
+        note.title = newTitle;
+        note.content = newBody;
+        note.dateChanged = LocalDateTime.now();
     }
 }
