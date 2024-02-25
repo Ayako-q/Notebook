@@ -29,16 +29,10 @@ public class Okna
 
         // Buttons functionality
 
-
-        Color bezeviy = new Color(255, 255, 156);
-
-        mainFrame.setBackground(bezeviy);
-
         mainFrame.setLayout(layout);
         mainFrame.add(newNote);
         mainFrame.add(editNote);
         mainFrame.add(deleteNote);
-        mainFrame.setBackground(bezeviy);
         mainFrame.setVisible(true);
 
     }

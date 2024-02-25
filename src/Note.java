@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 
 public class Note
 {
-    public LocalDateTime dateChanged, date;
+    public LocalDateTime dateChanged, date; // change time format
     public String content, title;
 
     // Constructor

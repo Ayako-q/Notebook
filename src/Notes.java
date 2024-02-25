@@ -3,7 +3,7 @@ import java.time.LocalDateTime;
 
 public class Notes
 {
-    private int usersCount = 0; // number of users
+    private int usersCount = 0; // total number of users
     private ArrayList<Note> noteList;
 
     public Notes() {noteList = new ArrayList<Note>();}
