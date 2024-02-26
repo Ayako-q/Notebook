@@ -6,7 +6,7 @@ public class Note
     public String content, title, category;
 
     // Constructor
-    public Note(LocalDateTime date, String content, String title, String category, LocalDateTime dateChanged)
+    public Note(LocalDateTime date, String title, String content, String category, LocalDateTime dateChanged)
     {
         this.title = title;
         this.content = content;

@@ -1,16 +1,23 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
-public class Okna extends JFrame {
+public class Interface extends JFrame{
 
     private JMenuBar menuBar;
     private JMenu fileMenu;
     private JButton newNoteBtn, editNoteBtn, deleteNoteBtn;
     private JList<String> noteList;
 
-    public Okna() {
+    public Interface()
+    {
         super("NoteBook");
+        Notes notes = new Notes();
+        notes.createNewNote("Zameta 1", "Zameta 1", "OPfw");
+        notes.createNewNote("Zameta 334", "ouwgrb OUHF iofweh", "OPfw");
+        notes.createNewNote("Zameta 2141", "ouwgrb OUHF iofweh", "OPfw");
+        notes.createNewNote("Zameta 1421", "ouwgrb OUHF iofweh", "OPfw");
+
+        // Window parameters
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(800, 600);
@@ -32,10 +39,12 @@ public class Okna extends JFrame {
 
         // Create note list with scroll pane
         noteList = new JList<>();
-        noteList.setListData(new String[]{"Note 1", "Note 2", "Note 3"});
         JScrollPane scrollPane = new JScrollPane(noteList);
+        noteList.setListData(titlesToList(notes));
         noteList.setBackground(Color.WHITE);
-        scrollPane.setPreferredSize(new Dimension(100, 550));
+
+        // Height should be AT LEAST 50px less than window size!
+        scrollPane.setPreferredSize(new Dimension(250, 550));
 
         // Create button panel
         // Functionality for edit and delete note should be here
@@ -50,7 +59,18 @@ public class Okna extends JFrame {
         c.gridwidth = 1;
         c.gridheight = 1;
         getContentPane().add(scrollPane, c);
-        getContentPane().setBackground(Color.decode("#ffe7d4"));
+        getContentPane().setBackground(Color.WHITE);
         setVisible(true);
+    }
+
+    public String[] titlesToList(Notes notes)
+    {
+        String[] arrayTitles = new String[notes.notesCount];
+        if (notes.notesCount != 0)
+        {
+            for(int i = 0; i < notes.notesList.size(); i++)
+            {arrayTitles[i] = notes.notesList.get(i).getTitle();}
+        }
+        return arrayTitles;
     }
 }

@@ -3,14 +3,15 @@ import java.time.LocalDateTime;
 
 public class Notes
 {
-    private int usersCount = 0; // total number of users
-    private ArrayList<Note> noteList;
+    protected int notesCount = 0; // total number of notes
+    protected ArrayList<Note> notesList;
 
-    public Notes() {noteList = new ArrayList<Note>();}
+    public Notes() {
+        notesList = new ArrayList<Note>();}
 
     // function to add a new user
     public void addUser(Note user) {
-        noteList.add(user);
+        notesList.add(user);
     }
 
     // Function to create a new note
@@ -19,8 +20,9 @@ public class Notes
         LocalDateTime time = LocalDateTime.now();
         System.out.println(time);
         Note newNote = new Note(time, title, body, category, time);
-        usersCount++;
-        noteList.add(newNote);
+        notesCount++;
+        notesList.add(newNote);
+
     }
 
     public void editNote(Note note, String newTitle, String newBody, String newCategory)
