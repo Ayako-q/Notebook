@@ -14,19 +14,22 @@ public class Notes
     }
 
     // Function to create a new note
-    public void createNewNote(String title, String body)
+    public void createNewNote(String title, String body, String category)
     {
         LocalDateTime time = LocalDateTime.now();
         System.out.println(time);
-        Note newNote = new Note(time, title, body, time);
+        Note newNote = new Note(time, title, body, category, time);
         usersCount++;
         noteList.add(newNote);
     }
 
-    public void editNote(Note note, String newTitle, String newBody)
+    public void editNote(Note note, String newTitle, String newBody, String newCategory)
     {
         note.title = newTitle;
         note.content = newBody;
+        note.category = newCategory;
         note.dateChanged = LocalDateTime.now();
     }
+
+    // 02/26 - add selectNote, deleteNote, sortNotes by category, date edited etc.
 }
